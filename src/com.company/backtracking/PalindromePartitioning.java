@@ -1,6 +1,7 @@
 package backtracking;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class PalindromePartitioning {
@@ -29,12 +30,69 @@ public class PalindromePartitioning {
     public static void main(String[] args) {
         List<List<String>> result = new ArrayList<>();
         new PalindromePartitioning().palindromeParitioning("aabbc", 0, new ArrayList<>(), result);
-        for (int i = 0; i < result.size(); i++) {
-            List<String> cur = result.get(i);
-            for (int j = 0; j < cur.size(); j++) {
-                System.out.print(cur.get(j) + " ");
+        result.sort(new Comparator<List<String>>() {
+            @Override
+            public int compare(List<String> o1, List<String> o2) {
+                int minSize = Math.min(o1.size(), o2.size());
+                for (int i = 0; i < minSize; i++) {
+                    int result = o1.get(i).length() - o2.get(i).length();
+                    if (result != 0) {
+                        return result;
+                    }
+                }
+                return o1.size() - o2.size();
             }
-            System.out.println();
-        }
+        });
+        System.out.println(result);
     }
 }
+
+/**
+ * Problem Description
+ * Given a string A, partition A such that every string of the partition is a palindrome.
+ *
+ * Return all possible palindrome partitioning of A.
+ *
+ * Ordering the results in the answer : Entry i will come before Entry j if :
+ * len(Entryi[0]) < len(Entryj[0]) OR
+ * (len(Entryi[0]) == len(Entryj[0]) AND len(Entryi[1]) < len(Entryj[1])) OR * * *
+ * (len(Entryi[0]) == len(Entryj[0]) AND ... len(Entryi[k] < len(Entryj[k]))
+ *
+ * Problem Constraints
+ * 1 <= len(A) <= 15
+ *
+ * Input Format
+ * First argument is a string A of lowercase characters.
+ *
+ * Output Format
+ * Return a list of all possible palindrome partitioning of s.
+ *
+ * Example Input
+ * Input 1:
+ *
+ * A = "aab"
+ * Input 2:
+ * <p>
+ * A = "a"
+ *
+ * Example Output
+ * Output 1:
+ *
+ * [
+ * ["a","a","b"]
+ * ["aa","b"],
+ * ]
+ * Output 2:
+ *
+ * [
+ * ["a"]
+ * ]
+ *
+ * Example Explanation
+ * Explanation 1:
+ *
+ * In the given example, ["a", "a", "b"] comes before ["aa", "b"] because len("a") < len("aa").
+ * Explanation 2:
+ *
+ * In the given example, only partition possible is "a" .
+ */
