@@ -7,16 +7,16 @@ public class MishaAndCandies {
 
     private int solve(int[] array, int b) {
         int count = 0;
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int i = 0; i < array.length; i++) {
-            priorityQueue.add(array[i]);
+            minHeap.add(array[i]);
         }
-        for (int i = 0; i < priorityQueue.size(); i++) {
-            int minElement = priorityQueue.poll();
+        for (int i = 0; i < minHeap.size(); i++) {
+            int minElement = minHeap.poll();
             if (minElement <= b) {
                 int chocolateEatenCount = minElement / 2;
                 count += chocolateEatenCount;
-                priorityQueue.add(minElement - chocolateEatenCount + priorityQueue.poll());
+                minHeap.add(minElement - chocolateEatenCount + minHeap.poll());
             }
         }
         return count;

@@ -32,7 +32,7 @@ public class KthSmallestInSortedMatrix {
 
     public static void main(String[] args) {
         int[][] matrix = new int[][]
-                {{1, 9, 11}, {8, 11, 13}, {12, 13, 15}};
+                {{1, 9, 11}, {8, 11, 13}, {12, 13, 15}, {20, 21, 22}};
         int k = 8;
         KthSmallestInSortedMatrix kthSmallestInSortedMatrix = new KthSmallestInSortedMatrix();
         System.out.println(kthSmallestInSortedMatrix.findKthSmallestInSortedMatrix(matrix, k));

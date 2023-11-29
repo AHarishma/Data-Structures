@@ -7,13 +7,13 @@ import java.util.Scanner;
 public class MagicianAndChocolates {
     private int solve(int a, int[] array) {
         int count = 0;
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
         for (int i = 0; i < array.length; i++) {
-            priorityQueue.add(array[i]);
+            maxHeap.add(array[i]);
         }
         while(a > 0) {
-            int maxElement = priorityQueue.poll();
-            priorityQueue.add(maxElement / 2);
+            int maxElement = maxHeap.poll();
+            maxHeap.add(maxElement / 2);
             count += maxElement;
             a--;
         }

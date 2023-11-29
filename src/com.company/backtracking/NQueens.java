@@ -9,7 +9,7 @@ public class NQueens {
         return result;
     }
 
-    void solve(int n, int row, List<Integer> currentList, List<List<Integer>> result) {
+    private void solve(int n, int row, List<Integer> currentList, List<List<Integer>> result) {
         if (row == n) {
             result.add(new ArrayList<>(currentList));
             return;
