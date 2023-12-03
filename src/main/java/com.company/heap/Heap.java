@@ -1,4 +1,4 @@
-package heap;
+package com.company.heap;
 
 import java.util.ArrayList;
 import java.util.Arrays;

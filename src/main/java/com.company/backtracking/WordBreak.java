@@ -1,4 +1,4 @@
-package backtracking;
+package com.company.backtracking;
 
 import java.util.*;
 
@@ -33,7 +33,7 @@ public class WordBreak {
 
 
     static class TrieNode {
-        TrieNode[] children;
+        private final TrieNode[] children;
         boolean isEnd;
 
         public TrieNode() {

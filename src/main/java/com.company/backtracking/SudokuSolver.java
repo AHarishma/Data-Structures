@@ -1,4 +1,4 @@
-package backtracking;
+package com.company.backtracking;
 
 public class SudokuSolver {
     private boolean solveSudoku(int[][] board) {

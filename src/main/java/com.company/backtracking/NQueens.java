@@ -1,4 +1,4 @@
-package backtracking;
+package com.company.backtracking;
 
 import java.util.*;
 
@@ -42,3 +42,20 @@ public class NQueens {
         System.out.println(result);
     }
 }
+
+/**
+ * one or many base cases
+ * for each index in the input ( str, array ), we will have for loop starting from that index till the length of the input
+ * recur with i + 1 as next index a p p l e
+ * -- a -- p -- p -- l --- e ( base condition and for loop is completed )
+ * -- le
+ * -- pl-- e
+ * -- ple
+ * -- pp -- l -- e
+ * -- pp -- le
+ * -- pple
+ * -- ap- p - l - e
+ * -- ap - p - le
+ * -- ap - ple
+ * -- apple
+ */

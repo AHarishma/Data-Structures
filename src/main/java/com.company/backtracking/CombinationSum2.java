@@ -1,4 +1,4 @@
-package backtracking;
+package com.company.backtracking;
 
 import java.util.*;
 

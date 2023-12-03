@@ -1,32 +1,31 @@
-package heap;
+package com.company.heap;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class BClosestPointToOrigin {
+    private static final int[] ORIGIN = new int[]{0, 0};
 
     private int[][] findBClosestPointToOrigin(int[][] points, int b) {
-        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                double distance1 = Math.pow(o1[0] - 0, 2) + Math.pow(o1[1] - 0, 2);
-                double distance2 = Math.pow(o2[0] - 0, 2) + Math.pow(o2[1] - 0, 2);
-                return Double.compare(distance1, distance2);
-            }
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>((o1, o2) -> {
+            double distance1 = Math.pow(o1[0] - ORIGIN[0], 2) + Math.pow(o1[1] - ORIGIN[1], 2);
+            double distance2 = Math.pow(o2[0] - ORIGIN[0], 2) + Math.pow(o2[1] - ORIGIN[1], 2);
+            return Double.compare(distance1, distance2);
         });
 
-        for (int i = 0; i < points.length; i++) {
-            priorityQueue.add(points[i]);
+        priorityQueue.addAll(Arrays.asList(points));
+
+        int[][] result = new int[b][2];
+        for (int i = 0; i < b; i++) {
+            result[i] = priorityQueue.poll();
         }
-        int[][] result = new int[1][2];
-        result[0] = priorityQueue.poll();
+
         return result;
     }
 
     public static void main(String[] args) {
         int[][] points = new int[][]{{1, 3}, {-2, 2}};
-        int b = 1;
+        int b = 2;
         BClosestPointToOrigin bClosestPointToOrigin = new BClosestPointToOrigin();
         int[][] result = bClosestPointToOrigin.findBClosestPointToOrigin(points, b);
         for (int[] row : result) {
@@ -37,6 +36,7 @@ public class BClosestPointToOrigin {
 }
 
 /**
+ * Link: https://leetcode.com/problems/k-closest-points-to-origin/description/
  * B closest points to Origin
  * <p>
  * Problem Description
