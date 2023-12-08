@@ -1,4 +1,4 @@
-package heap;
+package com.company.heap;
 
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -6,17 +6,17 @@ import java.util.Scanner;
 public class MaxArraySumAfterNegations {
 
     private int solve(int[] array, int b) {
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int i = 0; i < array.length; i++) {
-            priorityQueue.add(array[i]);
+            minHeap.add(array[i]);
         }
         while( b > 0) {
-            priorityQueue.add(priorityQueue.poll() * -1);
+            minHeap.add(minHeap.poll() * -1);
             b--;
         }
         int maxArraySum = 0;
-        while(!priorityQueue.isEmpty()) {
-            maxArraySum += priorityQueue.poll();
+        while(!minHeap.isEmpty()) {
+            maxArraySum += minHeap.poll();
         }
         return maxArraySum;
     }
