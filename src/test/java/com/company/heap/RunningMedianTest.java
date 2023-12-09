@@ -14,12 +14,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RunningMedianTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testFindRunningMedian(int[] arr, int[] expectedResult) {
+    public void testFindRunningMedian(int[] arr, int[] expectedResult) {
         int[] result = new RunningMedian().findRunningMedian(arr);
         assertEquals(Arrays.toString(expectedResult), Arrays.toString(result));
     }
 
-    static Stream<Arguments> testDataProvider() {
+    private static Stream<Arguments> testDataProvider() {
         return Stream.of(
                 Arguments.of(new int[]{1, 2, 5, 4, 3}, new int[]{1, 1, 2, 2, 3}),
                 Arguments.of(new int[]{5, 17, 100, 11}, new int[]{5, 5, 17, 11}),

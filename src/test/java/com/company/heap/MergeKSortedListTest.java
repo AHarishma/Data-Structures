@@ -12,12 +12,12 @@ import java.util.stream.Stream;
 public class MergeKSortedListTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testMergeKSortedList(ListNode[] lists, ListNode expectedResult) {
+    public void testMergeKSortedList(ListNode[] lists, ListNode expectedResult) {
         ListNode result = new MergeKSortedList().mergeKLists(lists);
         assertTrue(ListNode.areEqual(expectedResult, result));
     }
 
-    static Stream<Arguments> testDataProvider() {
+    private static Stream<Arguments> testDataProvider() {
         ListNode[] lists = new ListNode[3];
         lists[0] = new ListNode(1);
         lists[0].next = new ListNode(4);
