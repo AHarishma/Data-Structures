@@ -11,12 +11,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SingleNumberTwoTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testSingleNumber(int[] arr, int expectedResult) {
+    private void testSingleNumber(int[] arr, int expectedResult) {
         int result =  new SingleNumberTwo().singleNumber(arr);
         assertEquals(expectedResult, result);
     }
 
-    static Stream<Arguments> testDataProvider() {
+    public static Stream<Arguments> testDataProvider() {
         return Stream.of(
                 Arguments.of(new int[]{1,1,3,5,1,5,5}, 3),
                 Arguments.of(new int[]{1,1,6,6,1,6,9}, 9)
