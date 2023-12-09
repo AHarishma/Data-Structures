@@ -21,11 +21,8 @@ public class RunningMedian {
             if (maxHeap.size() - minHeap.size() > 1) {
                 minHeap.add(maxHeap.poll());
             }
-            if (maxHeap.size() == minHeap.size()) {
-                result[i] = maxHeap.peek();
-            } else {
-                result[i] = maxHeap.size() > minHeap.size() ? maxHeap.peek() : minHeap.peek();
-            }
+            result[i] =  maxHeap.size() >= minHeap.size() ? maxHeap.peek(): minHeap.peek();
+
         }
         return result;
     }

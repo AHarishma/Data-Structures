@@ -5,18 +5,16 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class RunningMedianTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
     public void testFindRunningMedian(int[] arr, int[] expectedResult) {
         int[] result = new RunningMedian().findRunningMedian(arr);
-        assertEquals(Arrays.toString(expectedResult), Arrays.toString(result));
+        assertArrayEquals(expectedResult, result);
     }
 
     private static Stream<Arguments> testDataProvider() {
