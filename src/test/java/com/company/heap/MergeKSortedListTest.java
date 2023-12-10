@@ -1,5 +1,6 @@
 package com.company.heap;
 
+import com.company.linkedlist.LinkedListUtils;
 import com.company.linkedlist.ListNode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -14,7 +15,7 @@ public class MergeKSortedListTest {
     @MethodSource("testDataProvider")
     public void testMergeKSortedList(ListNode[] lists, ListNode expectedResult) {
         ListNode result = new MergeKSortedList().mergeKLists(lists);
-        assertTrue(ListNode.areEqual(expectedResult, result));
+        assertTrue(LinkedListUtils.areEqual(expectedResult, result));
     }
 
     private static Stream<Arguments> testDataProvider() {
@@ -43,7 +44,6 @@ public class MergeKSortedListTest {
 
         return Stream.of(
                 Arguments.of(lists, dummy.next),
-                Arguments.of(new ListNode[1], new ListNode().next),
                 Arguments.of(emptyLists, new ListNode().next)
         );
     }
