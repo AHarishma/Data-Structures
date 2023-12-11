@@ -10,6 +10,7 @@ public class SingleNumberThree {
         for (int i = 0; i < 31; i++) {
             if (((xor >> i) & 1) == 1) {
                 setBitPos = i;
+                break;
             }
         }
         int bag1Xor = 0;
