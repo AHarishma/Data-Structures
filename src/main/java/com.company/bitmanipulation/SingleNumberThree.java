@@ -25,3 +25,9 @@ public class SingleNumberThree {
         return new int[]{bag1Xor, bag2Xor};
     }
 }
+
+/**
+ * Given an array which has all the elements are repeated twice except two numbers. Find the numbers.
+ * Array: [2, 4, 7, 5, 3, 4, 7, 2]
+ * Output: [5, 3]
+ */

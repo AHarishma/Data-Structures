@@ -2,9 +2,8 @@ package com.company.bitmanipulation;
 
 public class XorSum {
 
-    // 3, 5, 6, 8, 2
     public int xorSumAllPairs(int[] arr) {
-        int bitLength = getBitLengthOfMaxLength(arr);
+        int bitLength = Helper.getBitLengthOfMaxLength(arr);
         int answer = 0;
         for (int i = 0; i < bitLength; i++) {
             int ones = 0;
@@ -21,23 +20,10 @@ public class XorSum {
         }
         return answer << 1;
     }
-
-    public int getBitLengthOfMaxLength(int[] arr) {
-        int maxElement = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > maxElement) {
-                maxElement = arr[i];
-            }
-        }
-        int bitLength = 0;
-        if (maxElement == 0) {
-            return 1;
-        }
-
-        while (maxElement > 0) {
-            maxElement >>= 1;
-            bitLength++;
-        }
-        return bitLength;
-    }
 }
+
+/**
+ * Calculate xor sum of all pairs in an array.
+ * Array: [3, 5, 6, 8, 2]
+ * Output: 148
+ */
