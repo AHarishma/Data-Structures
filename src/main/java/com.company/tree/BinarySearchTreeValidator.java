@@ -15,7 +15,7 @@ public class BinarySearchTreeValidator {
         if (root.val <= range.min || root.val >= range.max) {
             return false;
         }
-        return validateBST(root.left, new Range(root.val, range.max)) && validateBST(root.right, new Range(range.min, root.val));
+        return validateBST(root.left, new Range(range.min, root.val)) && validateBST(root.right, new Range(root.val, range.max));
     }
 
     @NoArgsConstructor
