@@ -21,8 +21,8 @@ public class BinarySearchTreeValidator {
     @NoArgsConstructor
     @AllArgsConstructor
     class Range {
-        long min;
-        long max;
+        private long min;
+        private long max;
     }
 }
 

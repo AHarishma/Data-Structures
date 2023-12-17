@@ -6,9 +6,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TreeNode {
-    int val;
-    com.company.tree.TreeNode left;
-    com.company.tree.TreeNode right;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
 
     TreeNode(int val) {
         this.val = val;

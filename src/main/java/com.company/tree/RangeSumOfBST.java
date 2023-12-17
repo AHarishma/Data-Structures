@@ -1,7 +1,7 @@
 package com.company.tree;
 
 public class RangeSumOfBST {
-    int sum = 0;
+    private int sum = 0;
     public int rangeSumBST(TreeNode root, int low, int high) {
         if(root == null) {
             return sum;
