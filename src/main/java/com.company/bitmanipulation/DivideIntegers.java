@@ -3,6 +3,9 @@ package com.company.bitmanipulation;
 public class DivideIntegers {
 
     public int divideIntegers(int A, int B) {
+        if (A <= Integer.MIN_VALUE) {
+            return (A < 0) ^ (B < 0) ? Integer.MIN_VALUE: Integer.MAX_VALUE;
+        }
         int answer = 0;
         int a = Math.abs(A);
         int b = Math.abs(B);

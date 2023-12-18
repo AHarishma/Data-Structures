@@ -19,7 +19,11 @@ public class DivideIntegersTest {
     private static Stream<Arguments> testDataProvider() {
         return Stream.of(
                 Arguments.of(23, 6, 3),
-                Arguments.of(7, -3, -2)
+                Arguments.of(7, -3, -2),
+                Arguments.of(-2147483648, -1, 2147483647),
+                Arguments.of(-2147483648, 1, -2147483648),
+                Arguments.of(2147483647, 1, 2147483647),
+                Arguments.of(2147483647, 2, 1073741823)
         );
     }
 }
