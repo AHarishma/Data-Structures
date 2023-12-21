@@ -28,4 +28,6 @@ public class ShortestDistance {
 
 /**
  * Given an undirected graph, find the shortest distance between a given node and all other edges.
+ *
+ * https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1?page=1&category=Graph&sortBy=submissions
  */
