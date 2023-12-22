@@ -13,12 +13,12 @@ public class RangeSumBSTTest {
 
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testRangeSumBSTTree(TreeNode node, int low, int high, int expectedResult) {
+    public void testRangeSumBSTTree(TreeNode node, int low, int high, int expectedResult) {
         int result =  new RangeSumOfBST().rangeSumBST(node, low, high);
         assertEquals(expectedResult, result);
     }
 
-    static Stream<Arguments> testDataProvider() {
+    private static Stream<Arguments> testDataProvider() {
         TreeNode root = new TreeNode(10);
         root.left = new TreeNode(5);
         root.left.left = new TreeNode(3);

@@ -11,12 +11,12 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 public class SerializeBinaryTreeTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testSerializeBinaryTree(TreeNode node, int[] expectedResult) {
+    public void testSerializeBinaryTree(TreeNode node, int[] expectedResult) {
         int[] result = new SerializeBinaryTree().serializeBinaryTree(node);
         assertArrayEquals(expectedResult, result);
     }
 
-    static Stream<Arguments> testDataProvider() {
+    private static Stream<Arguments> testDataProvider() {
         TreeNode root1 = new TreeNode(1);
         root1.left = new TreeNode(2);
         root1.right = new TreeNode(3);

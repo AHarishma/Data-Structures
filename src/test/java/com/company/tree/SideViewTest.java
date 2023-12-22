@@ -15,14 +15,14 @@ public class SideViewTest {
 
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testLeftSideView(TreeNode node) {
+    public void testLeftSideView(TreeNode node) {
         List<Integer> result = new SideView().leftSideView(node);
         assertEquals(Arrays.asList(1, 2, 4, 9), result);
     }
 
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testRightSideView(TreeNode node) {
+    private void testRightSideView(TreeNode node) {
         List<Integer> result = new SideView().rightSideView(node);
         assertEquals(Arrays.asList(1, 3, 6, 10), result);
     }

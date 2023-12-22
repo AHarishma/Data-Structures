@@ -1,7 +1,7 @@
 package com.company.tree;
 
 public class Helper {
-    static boolean isSameTree(TreeNode root1, TreeNode root2) {
+    public static boolean isSameTree(TreeNode root1, TreeNode root2) {
         if (root1 == null && root2 == null) {
             return true;
         }

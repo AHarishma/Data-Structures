@@ -11,12 +11,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class OddAndEvenLevelsTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testOddAndEvenLevels(TreeNode node, int expectedResult) {
+    public void testOddAndEvenLevels(TreeNode node, int expectedResult) {
         int result = new OddAndEvenLevels().solve(node);
         assertEquals(expectedResult, result);
     }
 
-    static Stream<Arguments> testDataProvider() {
+    private static Stream<Arguments> testDataProvider() {
         TreeNode root1 = new TreeNode(1);
         root1.left = new TreeNode(2);
         root1.right = new TreeNode(3);

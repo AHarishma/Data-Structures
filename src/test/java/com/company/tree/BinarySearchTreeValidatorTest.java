@@ -11,12 +11,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BinarySearchTreeValidatorTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testBinarySearchTreeValidator(TreeNode node, boolean expectedResult) {
+    public void testBinarySearchTreeValidator(TreeNode node, boolean expectedResult) {
         boolean result = new BinarySearchTreeValidator().validateBinarySearchTree(node);
         assertEquals(expectedResult, result);
     }
 
-    static Stream<Arguments> testDataProvider() {
+    private static Stream<Arguments> testDataProvider() {
         TreeNode root1 = new TreeNode(2);
         root1.left = new TreeNode(2);
         root1.right = new TreeNode(2);

@@ -9,12 +9,12 @@ import java.util.stream.Stream;
 public class SearchBSTTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testSearchBST(TreeNode node, int val, TreeNode expectedResult) {
+    public void testSearchBST(TreeNode node, int val, TreeNode expectedResult) {
         TreeNode result = new SearchBST().searchBST(node, val);
         Helper.isSameTree(expectedResult, result);
     }
 
-    static Stream<Arguments> testDataProvider() {
+    private static Stream<Arguments> testDataProvider() {
         TreeNode root = new TreeNode(4);
         root.left = new TreeNode(2);
         root.right = new TreeNode(7);

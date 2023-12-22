@@ -13,26 +13,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class DFSTraversalTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testPreOrderTraversal(TreeNode node) {
+    public void testPreOrderTraversal(TreeNode node) {
         List<Integer> result = new DFSTraversal().preOrderTraversal(node);
         assertEquals(Arrays.asList(1, 2, 4, 5, 3, 6), result);
     }
 
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testInOrderTraversal(TreeNode node) {
+    public void testInOrderTraversal(TreeNode node) {
         List<Integer> result = new DFSTraversal().inOrderTraversal(node);
         assertEquals(Arrays.asList(4, 2, 5, 1, 3, 6), result);
     }
 
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testPostOrderTraversal(TreeNode node) {
+    public void testPostOrderTraversal(TreeNode node) {
         List<Integer> result = new DFSTraversal().postOrderTraversal(node);
         assertEquals(Arrays.asList(4, 5, 2, 6, 3, 1), result);
     }
 
-    static Stream<Arguments> testDataProvider() {
+    private static Stream<Arguments> testDataProvider() {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
