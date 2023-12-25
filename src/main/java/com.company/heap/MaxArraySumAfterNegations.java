@@ -20,6 +20,7 @@ public class MaxArraySumAfterNegations {
         }
         return maxArraySum;
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int t;

@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class KthSmallestInSortedMatrix {
-    int findKthSmallestInSortedMatrix(int[][] matrix, int k) {
+    private int findKthSmallestInSortedMatrix(int[][] matrix, int k) {
         PriorityQueue<int[]> priorityQueue = new PriorityQueue<>(new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {

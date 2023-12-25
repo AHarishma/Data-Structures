@@ -29,7 +29,7 @@ public class Heap {
         System.out.println("add element " + maxHeapList);
     }
 
-    static void inOrder(int[] arr, int index, List<Integer> list) {
+    private static void inOrder(int[] arr, int index, List<Integer> list) {
         if (index >= arr.length) {
             return;
         }
@@ -38,7 +38,7 @@ public class Heap {
         inOrder(arr, (2 * index) + 2, list);
     }
 
-    static boolean isMinHeap(int[] arr) {
+    private static boolean isMinHeap(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int left = (2 * i) + 1;
             int right = (2 * i) + 2;
@@ -52,7 +52,7 @@ public class Heap {
         return true;
     }
 
-    static boolean isMaxHeap(int[] arr) {
+    private static boolean isMaxHeap(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int left = (2 * i) + 1;
             int right = (2 * i) + 2;
@@ -66,7 +66,7 @@ public class Heap {
         return true;
     }
 
-    static void addElementInMinHeap(List<Integer> list, int element) {
+    private static void addElementInMinHeap(List<Integer> list, int element) {
         list.add(element);
         int current = list.size() - 1;
         while (current != 0) {
@@ -82,7 +82,7 @@ public class Heap {
         }
     }
 
-    static void addElementInMaxHeap(List<Integer> list, int element) {
+    private static void addElementInMaxHeap(List<Integer> list, int element) {
         list.add(element);
         int current = list.size() - 1;
         while (current != 0) {
@@ -98,7 +98,7 @@ public class Heap {
         }
     }
 
-    static void removeElementFromMinHeap(List<Integer> list) {
+    private static void removeElementFromMinHeap(List<Integer> list) {
         list.set(0, list.get(list.size() - 1)); //2,3,4
         list.remove(list.size() - 1);
         int i = 0;
