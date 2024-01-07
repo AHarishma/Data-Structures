@@ -1,7 +1,6 @@
 package com.company.tree;
 
 import lombok.AllArgsConstructor;
-import org.w3c.dom.Node;
 
 public class SumTree {
     boolean isSumTree(TreeNode root) {

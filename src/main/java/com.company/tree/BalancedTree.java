@@ -1,26 +1,35 @@
 package com.company.tree;
 
-import com.sun.source.tree.Tree;
+import lombok.AllArgsConstructor;
 
 public class BalancedTree {
     boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
         }
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
-
-        return Math.abs(leftHeight - rightHeight) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+        return isBalancedRecursive(root).isBalanced;
     }
 
-    private int height(TreeNode node) {
+    private NodeValue isBalancedRecursive(TreeNode node) {
         if (node == null) {
-            return 0;
+            return new NodeValue(0, true);
         }
-        int leftHeight = height(node.left);
-        int rightHeight = height(node.right);
+        NodeValue left = isBalancedRecursive(node.left);
+        if(!left.isBalanced) {
+            return left;
+        }
+        NodeValue right = isBalancedRecursive(node.right);
+        if(!right.isBalanced) {
+            return right;
+        }
 
-        return 1 + Math.max(leftHeight, rightHeight);
+        return new NodeValue(Math.max(left.height, right.height) + 1, Math.abs(left.height - right.height) <= 1);
+    }
+
+    @AllArgsConstructor
+    class NodeValue {
+        private int height;
+        private boolean isBalanced;
     }
 }
 
