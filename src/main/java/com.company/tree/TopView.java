@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class TopView {
-    List<Integer> topView(TreeNode root) {
+    public List<Integer> topView(TreeNode root) {
         TreeMap<Integer, Integer> map = new TreeMap<>();
         dfs(root, 0, map);
         return new ArrayList<Integer>(map.values());
