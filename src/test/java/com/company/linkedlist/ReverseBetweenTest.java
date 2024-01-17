@@ -9,8 +9,8 @@ import java.util.stream.Stream;
 public class ReverseBetweenTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testReverseLinkedList(ListNode head, int m, int n, ListNode expectedResult) {
-        ListNode result =  new ReverseBetween().reverseBetween(head, m, n);
+    void testReverseBetween(ListNode head, int m, int n, ListNode expectedResult) {
+        ListNode result = new ReverseBetween().reverseBetween(head, m, n);
         Helper.areLinkedListsEqual(expectedResult, result);
     }
 
@@ -29,8 +29,19 @@ public class ReverseBetweenTest {
         result.next.next.next.next = new ListNode(3);
         result.next.next.next.next.next = new ListNode(6);
 
+        ListNode head1 = new ListNode(1);
+        head1.next = new ListNode(2);
+        head1.next.next = new ListNode(3);
+
+        ListNode result1 = new ListNode(3);
+        result1.next = new ListNode(2);
+        result1.next.next = new ListNode(1);
+
         return Stream.of(
-                Arguments.of(head, 3, 5, result)
+                Arguments.of(head, 3, 5, result),
+                Arguments.of(new ListNode(5), 1, 1, new ListNode(5)),
+                Arguments.of(null, 1, 1, null),
+                Arguments.of(head1, 1, 3, result1)
         );
     }
 }

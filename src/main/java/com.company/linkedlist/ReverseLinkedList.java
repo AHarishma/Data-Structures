@@ -5,9 +5,10 @@ public class ReverseLinkedList {
         ListNode current = head;
         ListNode prev = null;
         while(current != null) {
+            ListNode nextNode = current.next;
             current.next = prev;
             prev = current;
-            current = current.next;
+            current = nextNode;
         }
        return prev;
     }

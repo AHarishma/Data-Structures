@@ -11,7 +11,7 @@ public class ReverseLinkedListTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
     void testReverseLinkedList(ListNode head, ListNode expectedResult) {
-        ListNode result =  new ReverseLinkedList().reverseLinkedList(head);
+        ListNode result = new ReverseLinkedList().reverseLinkedList(head);
         Helper.areLinkedListsEqual(expectedResult, result);
     }
 
@@ -25,7 +25,8 @@ public class ReverseLinkedListTest {
         result.next.next = new ListNode(1);
 
         return Stream.of(
-                Arguments.of(head, result)
+                Arguments.of(head, result),
+                Arguments.of(new ListNode(5), new ListNode(5))
         );
     }
 }

@@ -13,7 +13,7 @@ public class DetectCycleTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
     void testReverseLinkedList(ListNode head, boolean expectedResult) {
-        boolean result =  new DetectCycle().detectCycle(head);
+        boolean result = new DetectCycle().detectCycle(head);
         assertEquals(expectedResult, result);
     }
 
@@ -36,7 +36,8 @@ public class DetectCycleTest {
         return Stream.of(
                 Arguments.of(head, true),
                 Arguments.of(head1, false),
-                Arguments.of(null, false)
+                Arguments.of(null, false),
+                Arguments.of(new ListNode(1).next = new ListNode(2), false)
         );
     }
 }

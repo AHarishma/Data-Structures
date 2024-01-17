@@ -1,23 +1,23 @@
 package com.company.linkedlist;
 
 public class MiddleNode {
-    public int findMiddleNode(ListNode head) {
+    public ListNode middleNode(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
         ListNode tortoise = head;
         ListNode hare = head;
 
-        if(head == null) {
-            return -1;
-        }
-
-        while(hare != null) {
-            if(hare.next == null) {
-                return tortoise.val;
+        while (hare != null) {
+            if (hare.next == null) {
+                return tortoise;
             }
             tortoise = tortoise.next;
             hare = hare.next.next;
         }
 
-        return tortoise.val;
+        return tortoise;
     }
 }
 

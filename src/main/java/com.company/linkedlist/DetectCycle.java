@@ -2,17 +2,21 @@ package com.company.linkedlist;
 
 public class DetectCycle {
     public boolean detectCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
         ListNode tortoise = head;
         ListNode hare = head;
 
-        if(head == null) {
-            return false;
-        }
+        while (hare != null && tortoise != null) {
+            if (hare == null || hare.next == null) {
+                return false;
+            }
 
-        while(hare != null && tortoise != null) {
-            hare = hare.next;
-            tortoise = tortoise.next.next;
-            if(hare == tortoise) {
+            tortoise = tortoise.next;
+            hare = hare.next.next;
+
+            if (hare == tortoise) {
                 return true;
             }
         }
