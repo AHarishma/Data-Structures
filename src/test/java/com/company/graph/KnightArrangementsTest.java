@@ -35,7 +35,7 @@ public class KnightArrangementsTest {
                 {2, 2, 2, 0, 0}
         };
         return Stream.of(
-                Arguments.of(chessboard1, 24),
+                Arguments.of(chessboard1, 120),
                 Arguments.of(chessboard2, 6)
         );
     }

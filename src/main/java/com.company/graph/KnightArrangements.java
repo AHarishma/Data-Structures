@@ -3,8 +3,8 @@ package com.company.graph;
 import java.util.Arrays;
 
 public class KnightArrangements {
-    int[] rowIndex = new int[]{2, -2, -2, 2, 2, 2, -2, -2};
-    int[] colIndex = new int[]{2, 2, -2, -2, -1, 1, -1, 1};
+    int[] rowIndex = new int[]{-2, -2, 2, 2, -1, 1, -1, 1};
+    int[] colIndex = new int[]{-1, 1, -1, 1, -2, -2, -2, 2};
 
     public int getNumberOfKnightArrangements(int[][] chessboard) {
         int result = 1;
