@@ -26,4 +26,5 @@ public class DetectCycle {
 
 /**
  * Given a linked list. Detect any cycle/ loop in it. Return true or false
+ * https://leetcode.com/problems/linked-list-cycle/
  */
