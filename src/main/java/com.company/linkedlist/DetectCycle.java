@@ -2,9 +2,6 @@ package com.company.linkedlist;
 
 public class DetectCycle {
     public boolean detectCycle(ListNode head) {
-        if (head == null || head.next == null) {
-            return false;
-        }
         ListNode tortoise = head;
         ListNode hare = head;
 

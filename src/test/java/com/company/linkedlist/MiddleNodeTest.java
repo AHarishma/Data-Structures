@@ -18,17 +18,11 @@ public class MiddleNodeTest {
     }
 
     static Stream<Arguments> testDataProvider() {
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
+        ListNode head = Helper.createLinkedList(new int[]{1, 2, 3});
 
-        ListNode head1 = new ListNode(1);
-        head1.next = new ListNode(2);
+        ListNode head1 = Helper.createLinkedList(new int[]{1, 2});
 
-        ListNode head2 = new ListNode(1);
-        head2.next = new ListNode(2);
-        head2.next.next = new ListNode(3);
-        head2.next.next.next = new ListNode(4);
+        ListNode head2 = Helper.createLinkedList(new int[]{1, 2, 3, 4});
 
         return Stream.of(
                 Arguments.of(null, null),

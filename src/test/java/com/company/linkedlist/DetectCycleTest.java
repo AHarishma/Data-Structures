@@ -1,5 +1,6 @@
 package com.company.linkedlist;
 
+import lombok.Getter;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -9,11 +10,12 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DetectCycleTest {
+    private final DetectCycle detectCycleObject = new DetectCycle();
 
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testReverseLinkedList(ListNode head, boolean expectedResult) {
-        boolean result = new DetectCycle().detectCycle(head);
+    void testDetectCycle(ListNode head, boolean expectedResult) {
+        boolean result = detectCycleObject.detectCycle(head);
         assertEquals(expectedResult, result);
     }
 
