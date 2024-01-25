@@ -11,7 +11,7 @@ public class UnsetBitTest {
 
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testUnsetKthBit(int n, int k, int expectedResult) {
+    public void testUnsetKthBit(int n, int k, int expectedResult) {
         int result =  new UnsetBit().unsetKthBit(n, k);
         assertEquals(expectedResult, result);
     }
