@@ -36,7 +36,7 @@ public class TopViewTest {
         root1.right.left.left = new TreeNode(-1);
 
         return Stream.of(
-                Arguments.of(root, Arrays.asList(4, 2, 1, 9, 6)),
+                Arguments.of(root, Arrays.asList(4, 2, 1, 3, 6)),
                 Arguments.of(root1, Arrays.asList(-1, 1, 3))
         );
     }
