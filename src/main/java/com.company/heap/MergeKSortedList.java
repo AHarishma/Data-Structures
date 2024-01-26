@@ -13,7 +13,7 @@ class MergeKSortedList {
                 minHeap.add(list);
             }
         }
-        ListNode dummy = new ListNode();
+        ListNode dummy = new ListNode(0);
         ListNode current = dummy;
         while(!minHeap.isEmpty()) {
             ListNode node = minHeap.poll();
