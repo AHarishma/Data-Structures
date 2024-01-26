@@ -1,4 +1,4 @@
-package com.company.bitmanipulation;
+package com.company.tree;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -8,19 +8,23 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UnsetBitTest {
-
+public class SumRootToLeafNumbersTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    public void testUnsetKthBit(int n, int k, int expectedResult) {
-        int result =  new UnsetBit().unsetKthBit(n, k);
+    public void testPathSum(TreeNode node, int  expectedResult) {
+        int result = new SumRootToLeafNumbers().sumNumbers(node);
         assertEquals(expectedResult, result);
     }
 
     private static Stream<Arguments> testDataProvider() {
+        TreeNode root1 = new TreeNode(4);
+        root1.left = new TreeNode(9);
+        root1.right = new TreeNode(0);
+        root1.left.left = new TreeNode(5);
+        root1.left.right = new TreeNode(1);
+
         return Stream.of(
-                Arguments.of(15, 3, 7),
-                Arguments.of(7, 0, 6)
+                Arguments.of(root1, 1026)
         );
     }
 }

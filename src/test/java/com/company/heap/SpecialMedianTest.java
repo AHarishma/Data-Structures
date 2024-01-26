@@ -1,4 +1,4 @@
-package com.company.bitmanipulation;
+package com.company.heap;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -8,19 +8,18 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UnsetBitTest {
-
+public class SpecialMedianTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    public void testUnsetKthBit(int n, int k, int expectedResult) {
-        int result =  new UnsetBit().unsetKthBit(n, k);
+    public void testSpecialMedian(int[] arr, int expectedResult) {
+        int result = new SpecialMedian().solve(arr);
         assertEquals(expectedResult, result);
     }
 
     private static Stream<Arguments> testDataProvider() {
         return Stream.of(
-                Arguments.of(15, 3, 7),
-                Arguments.of(7, 0, 6)
+                Arguments.of(new int[]{4, 6, 8, 4}, 1),
+                Arguments.of(new int[]{2, 7, 3, 1}, 0)
         );
     }
 }

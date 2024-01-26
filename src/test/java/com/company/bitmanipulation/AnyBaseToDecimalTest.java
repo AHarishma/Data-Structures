@@ -8,19 +8,18 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UnsetBitTest {
-
+public class AnyBaseToDecimalTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    public void testUnsetKthBit(int n, int k, int expectedResult) {
-        int result =  new UnsetBit().unsetKthBit(n, k);
+    public void testAnyBaseToDecimal(int a, int b, int expectedResult) {
+        int result = new AnyBaseToDecimal().solve(a, b);
         assertEquals(expectedResult, result);
     }
 
     private static Stream<Arguments> testDataProvider() {
         return Stream.of(
-                Arguments.of(15, 3, 7),
-                Arguments.of(7, 0, 6)
+                Arguments.of(1010, 2, 10),
+                Arguments.of(22, 3, 8)
         );
     }
 }

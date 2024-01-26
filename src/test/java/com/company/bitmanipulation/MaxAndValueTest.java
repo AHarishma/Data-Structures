@@ -8,19 +8,18 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UnsetBitTest {
+public class MaxAndValueTest {
 
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    public void testUnsetKthBit(int n, int k, int expectedResult) {
-        int result =  new UnsetBit().unsetKthBit(n, k);
+    public void testMaxAndValue(int[] arr, int expectedResult) {
+        int result = new MaxAndValue().findMaxAndValue(arr);
         assertEquals(expectedResult, result);
     }
 
     private static Stream<Arguments> testDataProvider() {
         return Stream.of(
-                Arguments.of(15, 3, 7),
-                Arguments.of(7, 0, 6)
+                Arguments.of(new int[]{26, 13, 23, 28, 27, 7, 25}, 26)
         );
     }
 }

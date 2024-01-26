@@ -8,19 +8,19 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UnsetBitTest {
-
+public class InterestingArrayTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    public void testUnsetKthBit(int n, int k, int expectedResult) {
-        int result =  new UnsetBit().unsetKthBit(n, k);
+    public void testInterestingArray(int[] arr, String expectedResult) {
+        String result = new InterestingArray().solve(arr);
         assertEquals(expectedResult, result);
     }
 
     private static Stream<Arguments> testDataProvider() {
         return Stream.of(
-                Arguments.of(15, 3, 7),
-                Arguments.of(7, 0, 6)
+                Arguments.of(new int[]{3, 6, 1, 8}, "Yes"),
+                Arguments.of(new int[]{7, 5, 10, 13, 20, 28}, "No")
+
         );
     }
 }
