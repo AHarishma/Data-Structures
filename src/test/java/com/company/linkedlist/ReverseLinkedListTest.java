@@ -5,12 +5,14 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class ReverseLinkedListTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
     void testReverseLinkedList(ListNode head, ListNode expectedResult) {
         ListNode result = new ReverseLinkedList().reverseLinkedList(head);
-        Helper.areLinkedListsEqual(expectedResult, result);
+        assertTrue(Helper.areLinkedListsEqual(expectedResult, result));
     }
 
     static Stream<Arguments> testDataProvider() {

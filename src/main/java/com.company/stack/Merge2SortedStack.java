@@ -28,4 +28,7 @@ public class Merge2SortedStack {
  * S1: [1, 7, 10]
  * S2: [2, 5, 9, 12]
  * S: [1,2,5,7,9,10,12]
+ *
+ * TC: O(N+M)
+ * SC: O(N + M)
  */

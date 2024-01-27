@@ -6,12 +6,14 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class MiddleNodeTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
     void testMiddleNode(ListNode head, ListNode expectedResult) {
         ListNode result = new MiddleNode().middleNode(head);
-        Helper.areLinkedListsEqual(expectedResult, result);
+        assertTrue(Helper.areLinkedListsEqual(expectedResult, result));
     }
 
     static Stream<Arguments> testDataProvider() {
