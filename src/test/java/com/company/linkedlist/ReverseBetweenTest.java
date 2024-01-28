@@ -6,12 +6,14 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class ReverseBetweenTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
     void testReverseBetween(ListNode head, int m, int n, ListNode expectedResult) {
         ListNode result = new ReverseBetween().reverseBetween(head, m, n);
-        Helper.areLinkedListsEqual(expectedResult, result);
+        assertTrue(Helper.areLinkedListsEqual(expectedResult, result));
     }
 
     static Stream<Arguments> testDataProvider() {
