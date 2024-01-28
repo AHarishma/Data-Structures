@@ -6,14 +6,11 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class LoopLengthTest {
+public class DetectAndRemoveLoopTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    void testLoopLength(ListNode head, int expectedResult) {
-        int result = new LoopLength().findLengthOfLoop(head);
-        assertEquals(expectedResult, result);
+    void testDetectAndRemoveLoop(ListNode head) {
+        new DetectAndRemoveLoop().removeLoop(head);
     }
 
     static Stream<Arguments> testDataProvider() {
@@ -33,8 +30,8 @@ public class LoopLengthTest {
         head1.next.next.next.next.next = new ListNode(6);
 
         return Stream.of(
-                Arguments.of(head, 4),
-                Arguments.of(head1, 0)
+                Arguments.of(head),
+                Arguments.of(head1)
         );
     }
 }
