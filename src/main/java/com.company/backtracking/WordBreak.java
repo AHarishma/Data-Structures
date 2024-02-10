@@ -32,7 +32,7 @@ public class WordBreak {
 
 
 
-    static class TrieNode {
+    public static class TrieNode {
         private final TrieNode[] children;
         boolean isEnd;
 
@@ -42,7 +42,7 @@ public class WordBreak {
         }
     }
 
-    static class Trie {
+    public static class Trie {
         private final TrieNode root;
 
         public Trie() {
