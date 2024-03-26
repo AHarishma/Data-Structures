@@ -8,19 +8,17 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ActivitySelectionTest {
-
+public class MeetingsInOneRoomTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    public void testActivitySelection(int[][] arr, int expectedResult) {
-        int result = new ActivitySelection().getNoOfActivities(arr);
+    public void testMeetingsInOneRoom(int[] start, int[] end, int n, int expectedResult) {
+        int result = new MeetingsInOneRoom().maxMeetings(start, end, n);
         assertEquals(expectedResult, result);
     }
 
     private static Stream<Arguments> testDataProvider() {
         return Stream.of(
-                Arguments.of(new int[][]{{1, 2}, {3, 4}, {0, 6}, {8, 9}, {5, 7}, {5, 9}}, 4),
-                Arguments.of(new int[][]{{1, 2}, {0, 6}}, 1),
-                Arguments.of(new int[][]{{1, 2}, {2, 4}, {3, 4}, {4, 5}}, 3));
+                Arguments.of(new int[]{1, 3, 0, 5, 8, 5}, new int[]{2, 4, 6, 7, 9, 9}, 6, 4),
+                Arguments.of(new int[]{10, 12, 20}, new int[]{20, 25, 30}, 3, 1));
     }
 }

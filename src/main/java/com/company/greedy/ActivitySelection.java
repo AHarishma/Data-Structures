@@ -16,7 +16,7 @@ public class ActivitySelection {
         int activityCount = 0;
         for (int i = 0; i < times.length; i++) {
             if (times[i][0] >= endTime) {
-                endTime = times[i][0];
+                endTime = times[i][1];
                 activityCount++;
             }
         }
