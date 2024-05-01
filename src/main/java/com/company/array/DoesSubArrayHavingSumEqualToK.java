@@ -1,19 +1,19 @@
 package com.company.array;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class DoesSubArrayHavingSumEqualToK {
     public boolean doesSubArraysHavingSumEqualToK(int[] nums, int k) {
-        List<Integer> list = new ArrayList<>();
+        Set<Integer> set = new HashSet<>();
         int sum = 0;
-        list.add(0);
+        set.add(0);
         for (int num : nums) {
             sum += num;
-            if (list.contains(sum - k)) {
+            if (set.contains(sum - k)) {
               return true;
             }
-            list.add(sum);
+            set.add(sum);
         }
         return false;
     }

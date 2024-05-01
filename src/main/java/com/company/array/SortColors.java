@@ -1,16 +1,16 @@
 package com.company.array;
 
 public class SortColors {
-    public int[] sortColors(int[] nums) {
+    public int[] _sortColors(int[] nums) {
         int i = 0;
         int l = 0;
         int r = nums.length - 1;
         while (i <= r) {
-            if(nums[i] == 0) {
+            if (nums[i] == 0) {
                 swap(nums, l, i);
                 l++;
             }
-            if(nums[i] == 2) {
+            if (nums[i] == 2) {
                 swap(nums, i, r);
                 r--;
                 i--;
@@ -24,6 +24,33 @@ public class SortColors {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
+    }
+
+    // another way
+    public int[] sortColors(int[] nums) {
+        int[] count = new int[3];
+        int[] res = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                count[0]++;
+            } else if (nums[i] == 1) {
+                count[1]++;
+            } else if (nums[i] == 2) {
+                count[2]++;
+            }
+        }
+        int i = 0;
+        int j = 0;
+        while (j < 3) {
+            int loopCount = 0;
+            while (loopCount < count[j]) {
+                res[i] = j;
+                i++;
+                loopCount++;
+            }
+            j++;
+        }
+        return res;
     }
 }
 
