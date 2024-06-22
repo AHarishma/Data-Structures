@@ -2,39 +2,22 @@ package com.company.binarysearch;
 
 public class PainterPartitionProblem {
     public long minTime(int[] arr, int n, int k) {
-        int max = Integer.MIN_VALUE;
+        int max = 0;
         int sum = 0;
         for (int elem : arr) {
-            if (elem > max) {
-                max = elem;
-            }
+            max = Math.max(max, elem);
             sum += elem;
         }
+        long left = max;
+        long right = sum;
+        long answer = sum;
         if (k == 1) {
             return sum;
         }
-        if (k == arr.length) {
-            return max;
-        }
-        int left = max;
-        int right = sum;
-        int answer = 0;
         while (left <= right) {
-            int mid = left + (right - left) / 2;
-            int total = arr[0];
-            int painter = 1;
-            for (int i = 1; i < arr.length; i++) {
-                if (total + arr[i] <= mid) {
-                    total += arr[i];
-                } else {
-                    total = arr[i];
-                    painter = painter + 1;
-                }
-                if (painter > k) {
-                    break;
-                }
-            }
-            if (painter <= k) {
+            long mid = left + (right - left) / 2;
+
+            if (canBePainted(arr, mid, k)) {
                 answer = mid;
                 right = mid - 1;
             } else {
@@ -44,6 +27,22 @@ public class PainterPartitionProblem {
         return answer;
     }
 
+    private static boolean canBePainted(int[] arr, long mid, int k) {
+        int total = 0;
+        int painter = 1;
+        for (int board : arr) {
+            if (total + board <= mid) {
+                total += board;
+            } else {
+                total = board;
+                painter = painter + 1;
+                if (painter > k) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
 
 /**

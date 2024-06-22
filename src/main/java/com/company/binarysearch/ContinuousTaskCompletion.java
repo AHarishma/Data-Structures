@@ -15,13 +15,13 @@ public class ContinuousTaskCompletion {
         int answer = 0;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int total = tasks[0];
+            int total = 0;
             int workers = 1;
-            for (int i = 1; i < tasks.length; i++) {
-                if ((total + tasks[i]) <= mid) {
-                    total += tasks[i];
+            for (int task : tasks) {
+                if (total + task <= mid) {
+                    total += task;
                 } else {
-                    total = tasks[i];
+                    total = task;
                     workers = workers + 1;
                 }
                 if (workers > k) {

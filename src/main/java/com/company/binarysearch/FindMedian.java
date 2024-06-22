@@ -30,11 +30,11 @@ public class FindMedian {
         while (left <= right) {
             int mid = left + (right - left) / 2;
             int count = lessThanOrEqual(array1, mid) + lessThanOrEqual(array2, mid); //TC: logn + logm = log(nm)
-            if (count >= length) {
+            if (count <= length) {
                 answer = mid;
-                right = mid - 1;
-            } else {
                 left = mid + 1;
+            } else {
+                right = mid - 1;
             }
         }
         return answer;
@@ -46,9 +46,6 @@ public class FindMedian {
         int right = arr.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (arr[mid] == value) {
-                return mid;
-            }
             if (arr[mid] < value) {
                 answer = mid + 1;
                 left = mid + 1;
