@@ -22,7 +22,7 @@ public class FruitIntoBasket {
             total += 1;
             maxTotal = Math.max(maxTotal, total);
         }
-        return total;
+        return maxTotal;
     }
 }
 
