@@ -47,7 +47,8 @@ public class MagicianAndChocolates {
  *
  * Problem Description
  * Given N bags, each bag contains Bi chocolates. There is a kid and a magician.
- * In a unit of time, the kid can choose any bag i, and eat Bi chocolates from it, then the magician will fill the ith bag with floor(Bi/2) chocolates.
+ * In a unit of time, the kid can choose any bag i, and eat Bi chocolates from it,
+ * then the magician will fill the ith bag with floor(Bi/2) chocolates.
  *
  * Find the maximum number of chocolates that the kid can eat in A units of time.
  *

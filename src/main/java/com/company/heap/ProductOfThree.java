@@ -48,7 +48,8 @@ public class ProductOfThree {
  * <p>
  * You have to find the product of the three largest integers in array A from range 1 to i, where i goes from 1 to N.
  * <p>
- * Return an array B where B[i] is the product of the largest 3 integers in range 1 to i in array A. If i < 3, then the integer at index i in B should be -1.
+ * Return an array B where B[i] is the product of the largest 3 integers in range 1 to i in array A.
+ * If i < 3, then the integer at index i in B should be -1.
  * <p>
  * <p>
  * <p>

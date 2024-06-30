@@ -1,7 +1,5 @@
 package com.company.tree;
 
-import com.sun.source.tree.Tree;
-
 public class Isomorphic {
 
     public boolean isIsomorphic(TreeNode root1, TreeNode root2) {
@@ -26,7 +24,8 @@ public class Isomorphic {
  * Given two Binary Trees. Check whether they are Isomorphic or not.
  * <p>
  * Note:
- * Two trees are called isomorphic if one can be obtained from another by a series of flips, i.e. by swapping left and right children of several nodes.
+ * Two trees are called isomorphic if one can be obtained from another by a series of flips,
+ * i.e. by swapping left and right children of several nodes.
  * Any number of nodes at any level can have their children swapped. Two empty trees are isomorphic.
  * Input:
  * T1    1     T2:    1
