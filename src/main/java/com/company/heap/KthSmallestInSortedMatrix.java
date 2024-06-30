@@ -41,4 +41,5 @@ public class KthSmallestInSortedMatrix {
 
 /**
  * Link: https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+ * https://www.geeksforgeeks.org/problems/kth-element-in-matrix/1
  */

@@ -19,3 +19,8 @@ public class NoOfSubArraysHavingSumEqualToK {
         return count;
     }
 }
+
+/**
+ * [1, 2, 3]
+ * [1, 3, 6] -- prefix sum
+ */
