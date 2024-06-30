@@ -7,7 +7,7 @@ public class StaircaseCount {
         int staircaseStepsCount = 0;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int blocks = (mid * (mid + 1)) / 2;
+            long blocks = ((long) mid * (mid + 1)) / 2;
             if (noOfBlocks >= blocks) {
                 staircaseStepsCount = mid;
                 left = mid + 1;
