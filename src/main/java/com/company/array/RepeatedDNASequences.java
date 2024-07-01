@@ -17,7 +17,8 @@ public class RepeatedDNASequences {
         for (int r = 10; r < s.length(); r++) {
             str.deleteCharAt(0);
             str.append(s.charAt(r));
-            map.put(str.toString(), map.getOrDefault(str.toString(), 0) + 1);
+            String key = str.toString();
+            map.put(key, map.getOrDefault(key, 0) + 1);
         }
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             if (entry.getValue() > 1) {
