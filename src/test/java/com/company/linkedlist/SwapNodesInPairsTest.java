@@ -30,10 +30,10 @@ public class SwapNodesInPairsTest {
         ListNode result3 = Helper.createLinkedList(new int[]{1});
 
         return Stream.of(
-                Arguments.of(head, result)
-//                Arguments.of(head1, result1),
-//                Arguments.of(head2, result2),
-//                Arguments.of(head3, result3)
+                Arguments.of(head, result),
+                Arguments.of(head1, result1),
+                Arguments.of(head2, result2),
+                Arguments.of(head3, result3)
         );
     }
 }
