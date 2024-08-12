@@ -40,7 +40,7 @@ public class SortLinkedList {
             return null;
         }
         ListNode slow = head;
-        ListNode fast = head;
+        ListNode fast = head.next;
         while (fast != null) {
             if (fast.next == null) {
                 return slow;
