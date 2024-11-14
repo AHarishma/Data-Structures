@@ -64,8 +64,8 @@ public class DetectAndRemoveLoop {
  * Output: 1
  * Explanation: The link list looks like
  * 1 -> 3 -> 4
- * ^    |
- * |____|
+ *      |    |
+ *      |----|
  * A loop is present. If you remove it
  * successfully, the answer will be 1.
  */

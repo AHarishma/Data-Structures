@@ -8,7 +8,7 @@ public class ProductOfThree {
         int[] result = new int[arr.length];
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int i = 0; i < arr.length; i++) {
-                minHeap.add(arr[i]);
+            minHeap.add(arr[i]);
 
             if (minHeap.size() > 3) {
                 minHeap.poll();

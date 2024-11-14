@@ -13,8 +13,8 @@ public class NearestHospitalDistance {
         int[][] distance = new int[matrix.length][matrix[0].length];
         boolean[][] visited = new boolean[matrix.length][matrix[0].length];
         Queue<PointInfo> queue = new LinkedList<>();
-        for(int i = 0; i < matrix.length; i++ ) {
-            for (int j = 0; j< matrix[0].length; j++) {
+        for(int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
                 if(matrix[i][j] == 0) {
                     visited[i][j] = true;
                     queue.add(new PointInfo(i, j, 0));
