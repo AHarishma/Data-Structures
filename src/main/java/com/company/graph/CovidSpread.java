@@ -47,7 +47,7 @@ public class CovidSpread {
         return unInfectedPatients == 0 ? distance : -1;
     }
 
-    private class PointInfo {
+    private static class PointInfo {
         int x;
         int y;
         int distance;

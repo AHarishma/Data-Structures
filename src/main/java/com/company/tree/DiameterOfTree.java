@@ -31,7 +31,7 @@ public class DiameterOfTree {
  * 10
  * /   \
  * 20    30
- * /   \
- * 40   60
+ * /  \
+ * 40  60
  * Output: 4
  */

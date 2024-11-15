@@ -19,6 +19,7 @@ public class MeetingsInOneRoomTest {
     private static Stream<Arguments> testDataProvider() {
         return Stream.of(
                 Arguments.of(new int[]{1, 3, 0, 5, 8, 5}, new int[]{2, 4, 6, 7, 9, 9}, 6, 4),
-                Arguments.of(new int[]{10, 12, 20}, new int[]{20, 25, 30}, 3, 1));
+                Arguments.of(new int[]{10, 12, 20}, new int[]{20, 25, 30}, 3, 1),
+                Arguments.of(new int[]{2, 5, 7}, new int[]{7, 8, 9}, 3, 2));
     }
 }
