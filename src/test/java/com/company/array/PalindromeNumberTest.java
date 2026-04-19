@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PalindromeNumberTest {
     @ParameterizedTest
     @MethodSource("testDataProvider")
-    public void testNoOfSubArrayEqualToK(int num, boolean expectedResult) {
+    public void testPalindromeNumber(int num, boolean expectedResult) {
         boolean result = new PalindromeNumber().isPalindrome(num);
         assertEquals(expectedResult, result);
     }
